@@ -1,2 +1,5 @@
-# fast-study
-An app designed to make learning Japanese more efficient.
+# 先看视频
+
+<audio controls>
+  <source src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/app-introduce.mp4" type="audio/mpeg">
+</audio>
