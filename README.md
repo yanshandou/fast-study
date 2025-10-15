@@ -2,5 +2,6 @@
 
 <video  src="https://github.com/yanshandou/fast-study/blob/main/video/app-introduce.mp4" controls></video>
 
-
 ![](https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251015205003083.png)
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251015205003083.png" alt="image-20251015205003083" style="zoom:50%;" />
