@@ -102,6 +102,6 @@
 - 跑步的时候用手机, 自习室里用平板
 - 多端数据一致, 只同步修改, 提升效率
 
-![](https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251016221413197.png)
+![](https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251016222805107.png)
 
 - 如上图所示, 同步的逻辑示意图
