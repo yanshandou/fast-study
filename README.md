@@ -111,6 +111,8 @@
 - 当检测到本地的待复习笔记的 ID 列表和云端不一致时, 会触发同步功能, 如果检测到一致, 则不会触发同步功能.
 - 检测时机有以下几种:
 
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251018210251020.gif" width="10%" alt="同步触发时机示意图"/>
+
 ![](https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251018210251020.gif)
 
 1. ⬆️ 打开 APP 的时候
