@@ -115,18 +115,18 @@
   - 3. 切入前台的时候
   - 4. 手动跳转到同步页面的时候
 
-<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251018210251020.gif" width="35%" alt="同步触发时机示意图"/>
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251018210251020.gif" width="40%" alt="同步触发时机示意图"/>
 
-- ⬆️ 打开 APP 的时候, 会检测本地和云端的待复习笔记 ID 列表是否一致, 如果不一致, 则触发同步功能. 跳转到同步页面.
+⬆️ 打开 APP 的时候, 会检测本地和云端的待复习笔记 ID 列表是否一致, 如果不一致, 则触发同步功能. 跳转到同步页面.
 
-<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251018210533813.gif" width="35%" alt="打开APP时触发同步示意图"/>
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251018210533813.gif" width="40%" alt="打开APP时触发同步示意图"/>
 
-- ⬆️ 切入后台的时候, 会检测本地和云端的待复习笔记 ID 列表是否一致, 如果不一致, 则触发同步功能. 会有通知信息显示同步状态.
+⬆️ 切入后台的时候, 会检测本地和云端的待复习笔记 ID 列表是否一致, 如果不一致, 则触发同步功能. 会有通知信息显示同步状态.
 
-<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251018210646401.gif" width="35%" alt="切入后台时触发同步示意图"/>
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251018210646401.gif" width="40%" alt="切入后台时触发同步示意图"/>
 
-- ⬆️ 切入前台的时候, 会检测本地和云端的待复习笔记 ID 列表是否一致, 如果不一致, 则触发同步功能. 跳转到同步页面.
+⬆️ 切入前台的时候, 会检测本地和云端的待复习笔记 ID 列表是否一致, 如果不一致, 则触发同步功能. 跳转到同步页面.
 
-<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251018210754726.gif" width="35%" alt="切入前台时触发同步示意图"/>
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251018210754726.gif" width="40%" alt="切入前台时触发同步示意图"/>
 
-- ⬆️ 手动跳转到同步页面的时候, 在分类页面, 通过左滑屏幕实现
+⬆️ 手动跳转到同步页面的时候, 在分类页面, 通过左滑屏幕实现.
