@@ -111,18 +111,18 @@
 - 当检测到本地的待复习笔记的 ID 列表和云端不一致时, 会触发同步功能, 如果检测到一致, 则不会触发同步功能.
 - 检测时机有以下几种:
 
-<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251018180756109.gif" style="zoom:33%;" />
+![](https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251018210251020.gif)
 
 1. ⬆️ 打开 APP 的时候
 
-<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251018180806228.gif" style="zoom:33%;" />
+![](https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251018210533813.gif)
 
 2. ⬆️ 切入后台的时候
 
-<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251018181124688.gif" style="zoom:33%;" />
+![](https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251018210646401.gif)
 
 3. ⬆️ 切入前台的时候
 
-<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251018181428161.gif" style="zoom: 33%;" />
+![](https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251018210754726.gif)
 
 4. ⬆️ 手动跳转到同步页面的时候
