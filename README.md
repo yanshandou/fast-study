@@ -115,14 +115,14 @@
 
 - ⬆️ 打开 APP 的时候
 
-<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251018210533813.gif" width="50%" alt="打开APP时触发同步示意图"/>
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251018210533813.gif" width="30%" alt="打开APP时触发同步示意图"/>
 
 - ⬆️ 切入后台的时候
 
-<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251018210646401.gif" width="50%" alt="切入后台时触发同步示意图"/>
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251018210646401.gif" width="30%" alt="切入后台时触发同步示意图"/>
 
 - ⬆️ 切入前台的时候
 
-<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251018210754726.gif" width="50%" alt="切入前台时触发同步示意图"/>
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251018210754726.gif" width="30%" alt="切入前台时触发同步示意图"/>
 
 - ⬆️ 手动跳转到同步页面的时候
