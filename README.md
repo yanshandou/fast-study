@@ -197,3 +197,29 @@
 - 这个时候需要使用分类搜索页面
 
 # 分类搜索页面
+
+- 分类搜索页面用于搜索分类, 可以查询出分类下的所有待复习笔记
+
+> ⬇️ 分类页面长摁进入分类搜索页面
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251022130603886.gif" width="40%" alt="分类搜索页面示意图"/>
+
+> ⬇️ 分类搜索页面主要包括搜索框以及搜索历史列表
+
+![](https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251022141425205.png)
+
+> ⬇️ 支持通配符 "\*" 显示所有分类
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251022142131534.gif" width="40%" alt="分类搜索通配符示意图"/>
+
+> ⬇️ 支持历史记录快速搜索(分类上双击)
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251022142337031.gif" width="40%" alt="分类搜索历史记录示意图"/>
+
+> ⬇️ 支持长按历史记录删除(可以恢复)
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251022142709445.gif" width="40%" alt="分类搜索历史记录删除示意图"/>
+
+> ⬇️ 分类查询之后, 点击消息框跳转到分类页面
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251022143021483.gif" width="40%" alt="分类搜索跳转示意图"/>
