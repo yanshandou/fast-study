@@ -223,3 +223,75 @@
 > ⬇️ 分类查询之后, 点击消息框跳转到分类页面
 
 <img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251022143021483.gif" width="40%" alt="分类搜索跳转示意图"/>
+
+# 笔记列表页面
+
+> ⬇️ 从分类页面左滑进入笔记列表页面, 显示选中分类下的笔记列表
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251023143030586.gif" width="40%" alt="分类搜索跳转示意图"/>
+
+> ⬇️ 每次最多显示 50 条笔记, 支持分页显示
+
+![](https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251023145109796.png)
+
+- 单击选中, 播放音频并显示翻译
+- 再次单击, 标记为未掌握
+- 再次单击, 还原为初始状态
+- 不同背景色表示不同级别
+
+> ⬇️ 单击笔记示意图
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251023151540144.gif" width="40%" alt="笔记列表单击示意图"/>
+
+> ⬇️ 双击显示详情(进入卡片页面)
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251023151858123.gif" width="40%" alt="笔记列表双击示意图"/>
+
+# 笔记批量操作
+
+- 支持多选笔记, 批量升级/降级笔记
+- 高亮的笔记, 即标记为已掌握的笔记, 统一级别+1
+- 有删除线的笔记, 即标记为未掌握的笔记, 统一级别-1
+- 可以快速处理笔记, 提升学习效率
+- 适用于已经掌握大部分内容, 只需要复习少量内容的情况
+
+> ⬇️ 在有笔记被标记的情况下, 长摁或者摇一摇, 可以批量处理笔记
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251023153112731.gif" width="40%" alt="笔记批量操作示意图"/>
+
+# 笔记列表播放
+
+- 在没有笔记被标记的情况下, 长摁或者摇一摇, 可以播放音频列表
+- 播放模式为分组播放(3 次日语 + 1 次中文), 每组重复 3 次
+
+> ⬇️ 摇一摇/长摁唤出播放音频列表示意图(竖屏)
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251023160620484.gif" width="40%" alt="笔记列表播放示意图"/>
+
+> ⬇️ 摇一摇/长摁唤出播放音频列表示意图(横屏)
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251023160743016.gif" width="60%" alt="笔记列表播放示意图横屏"/>
+
+> ⬇️ 播放列表示意图
+
+![](https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251023161651815.png)
+
+> ⬇️ 单击切换播放/暂停, 暂停时显示翻译
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251023162509223.gif" width="40%" alt="笔记列表播放暂停示意图"/>
+
+> ⬇️ 当前组播放完毕, 自动跳到下一组(当前笔记级别-1)
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251023163112922.gif" width="40%" alt="笔记列表播放跳转示意图"/>
+
+> ⬇️ 如果已经记住, 可双击快速跳转下一组(当前笔记级别+1)
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251023163249379.gif" width="40%" alt="笔记列表播放跳转示意图快速跳转"/>
+
+> ⬇️ 长摁添加谐音助记(竖屏演示)
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251023163708417.gif" width="40%" alt="笔记列表添加谐音助记示意图"/>
+
+> ⬇️ 长摁添加谐音助记(横屏演示)
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251023163735388.gif" width="60%" alt="笔记列表添加谐音助记示意图横屏"/>
