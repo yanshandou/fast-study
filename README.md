@@ -295,3 +295,85 @@
 > ⬇️ 长摁添加谐音助记(横屏演示)
 
 <img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251023163735388.gif" width="60%" alt="笔记列表添加谐音助记示意图横屏"/>
+
+# 卡片页面
+
+- APP 的核心页面, 基于记忆卡片进行学习
+- 从笔记列表页面切入到卡片页面有三种方式
+
+> ⬇️ 双击笔记列表中的某个笔记
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251023151858123.gif" width="40%" alt="笔记列表双击示意图"/>
+
+> ⬇️ 从笔记列表页面左滑进入卡片页面(听力模式)
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251024150032717.gif" width="40%" alt="卡片页面听力模式示意图"/>
+
+> ⬇️ 从笔记列表页面右滑进入卡片页面(普通模式)
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251024150312943.gif" width="40%" alt="卡片页面普通模式示意图"/>
+
+> ⬇️ 支持多选笔记, 进入卡片页面后, 只复习选中的笔记
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251024162218812.gif" width="40%" alt="卡片页面多选示意图"/>
+
+# 卡片页面界面说明
+
+> ⬇️ 顶部状态栏
+
+![](https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251024151833321.png)
+
+> ⬇️ 单击切换卡片正反面
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251024152348811.gif" width="40%" alt="卡片页面切换正反面示意图"/>
+
+> ⬇️ 卡片正面(白色卡片)
+
+![](https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251024153649647.png)
+
+> ⬇️ 卡片反面(白色方格卡片)
+
+![](https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251024160321279.png)
+
+> ⬇️ 卡片底部, 卡片背景
+
+![](https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251024160832237.png)
+
+# 卡片操作
+
+- 卡片支持上下左右滑动
+
+> ⬇️ 上滑笔记, 表示记忆正确, 级别+1(弹框提示下一次复习时间)
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251024162741210.gif" width="40%" alt="卡片上滑示意图"/>
+
+> ⬇️ 下滑笔记, 表示记忆错误, 级别-1(弹框提示下一次复习时间)
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251024162859037.gif" width="40%" alt="卡片下滑示意图"/>
+
+> ⬇️ 左滑笔记, 切换下一个笔记, 右滑笔记, 切换上一个笔记(支持循环切换)
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251024163458047.gif" width="40%" alt="卡片左右滑动示意图"/>
+
+# 听力模式和普通模式的区别
+
+- 听力模式: 
+  - 从笔记列表页面右滑进入卡片页面
+  - 卡片背景为淡黄色
+  - 没有播放按钮, 防止误触
+  - 展示卡片时, 默认显示正面卡片, 并播放正面音频(播放一次)
+  - 切换到反面卡片时, 自动播放反面音频(播放一次)
+  - 摇一摇, 再次播放当前卡片音频
+  - 卡片内容过长时, 没有滚动条, 防止误触
+- 普通模式: 从笔记列表页面左滑进入卡片页面
+  - 卡片背景为白色
+  - 有三种细分模式可选
+  - 有播放按钮, 可手动播放音频
+  - 切换正反面时, 不会暂停音频
+  - 卡片内容过长时, 有滚动条, 可滚动查看全部内容
+  - 音频为无限循环播放
+  - 摇一摇暂停/播放当前音频
+
+# 常用按钮组
+
+# 增强按钮组
