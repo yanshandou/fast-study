@@ -417,17 +417,77 @@
 
 > ⬇️ 增强按钮组功能说明
 
+![](https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251025174807620.png)
+
+> ⬇️ 语音笔记/录音笔记, 可以录制语音, 保存后, 会添加在笔记的最后
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251025190520148.gif" width="40%" alt="增强按钮组语音笔记示意图"/>
+
+> ⬇️ 人工智能, 调用的 ChatGPT 接口(和快捷按钮组的功能一致, 属于 AI 的第二个入口)
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251025190650498.gif" width="40%" alt="增强按钮组人工智能示意图"/>
+
+> ⬇️ 文字笔记, 可以用于为单词添加谐音助记, 马克笔效果高亮显示
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251025191148755.gif" width="40%" alt="增强按钮组文字笔记示意图"/>
+
+> ⬇️ 忘记笔记, 相当于下滑笔记, 级别-1(和快捷按钮组的功能一致)
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251025191400492.gif" width="40%" alt="增强按钮组忘记笔记示意图"/>
+
+> ⬇️ 切换振动状态, 用于跑步时关闭 shake 监听, 防止误触发. shake(摇一摇)功能, 用于控制当前音频的播放和暂停
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251025192717813.gif" width="40%" alt="增强按钮组切换模式示意图"/>
+
+> ⬇️ 记住笔记, 相当于上滑笔记, 级别+1(和快捷按钮组的功能一致)
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251025192929322.gif" width="40%" alt="增强按钮组记住笔记示意图"/>
+
+> ⬇️ 删除笔记, 支持撤销(和快捷按钮组的功能一致)
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251025193519418.gif" width="40%" alt="增强按钮组删除笔记示意图"/>
+
+> ⬇️ 发音校准, 通过语音识别(STT)技术, 把录音转成文字, 可以和笔记中的日语文本进行对比(另一个入口是日语文本上长摁)
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251025193842653.gif" width="40%" alt="增强按钮组发音校准示意图"/>
+
+> ⬇️ 笔记编辑, 可以编辑当前笔记的内容, 支持 markdown 语法
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251025194636431.gif" width="40%" alt="增强按钮组笔记编辑示意图"/>
+
+# 发音校准的两个入口
+
+> ⬇️ 增强按钮组的发音校准按钮
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251025193842653.gif" width="40%" alt="增强按钮组发音校准示意图"/>
+
+> ⬇️ 日语文本上长摁, 触发发音校准功能, 支持标记需要关注的发音
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251025195213136.gif" width="40%" alt="日语文本发音校准示意图"/>
+
 # 人工智能的三个入口
 
-- 快捷按钮组的 AI 按钮
-- 增强按钮组的 AI 按钮
-- 双击日语文本
+> ⬇️ 快捷按钮组的 AI 按钮
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251025165227358.gif" width="40%" alt="快捷按钮组人工智能示意图"/>
+
+> ⬇️ 增强按钮组的 AI 按钮
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251025190650498.gif" width="40%" alt="增强按钮组人工智能示意图"/>
+
+> ⬇️ 日语文本上双击(如果是句子, 自动拆解, 如果是单词, 自动解释)
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251025195719360.gif" width="40%" alt="日语文本人工智能示意图"/>
 
 # 调整字体大小
 
 - 连续点击屏幕 7 次, 可触发字体大小调整功能
 - 使用音量键调整字体大小
 - 支持卡片正面和反面独立调整
+
+> ⬇️ 调整字体大小效果图
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251025201916223.gif" width="40%" alt="调整字体大小示意图"/>
 
 # 填空模式
 
@@ -439,3 +499,32 @@
 
 - APP 的功能是展示并操作记忆卡片
 - 如果后台制作数据时, 使用 JLPT 的题目, 则可以实现刷题功能
+
+# 后期计划
+
+- 优化界面设计, 提升用户体验
+- 增加更多学习资料, 丰富内容库
+- 开发 iOS 版本, 扩展用户群体
+- 引入社交功能, 促进用户交流与分享
+- 探索更多 AI 应用场景, 提升学习效率
+- 持续收集用户反馈, 不断改进产品功能
+- 推广与营销, 提升品牌知名度
+- 寻找合作机会, 拓展业务范围
+- 制定长期发展战略, 确保项目可持续发展
+- 建立用户社区, 增强用户粘性
+- 举办线上线下活动, 增强用户参与感
+- 开发个性化学习推荐系统, 提升用户学习效果
+- 引入游戏化元素, 增强学习趣味性
+- 优化同步功能, 提升跨设备使用体验
+- 探索更多语言学习方向, 扩展产品线
+
+# 联系我
+
+- 邮箱: example@example.com
+- GitHub: [
+  https://github.com/example
+  ](https://github.com/example)
+- 微信: example_wechat
+- QQ: 123456789
+- 欢迎交流与合作!
+- --- IGNORE ---
