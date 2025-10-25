@@ -491,9 +491,13 @@
 
 # 填空模式
 
-- 笔记内容为 markdown 格式
-- 如果内容使用反引号包裹, 则表示该部分为填空内容
-- 通过单击, 控制显示和隐藏填空内容
+> ⬇️ 笔记内容为 markdown 格式, 如果内容使用反引号包裹, 则表示该部分为填空内容
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251025202738013.gif" width="40%" alt="填空模式示意图"/>
+
+> ⬇️ 通过单击, 控制显示和隐藏填空内容
+
+<img src="https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251025203913923.gif" width="40%" alt="填空内容显示与隐藏示意图"/>
 
 # 刷题功能
 
