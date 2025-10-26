@@ -6,11 +6,11 @@
 
 ![](https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251015215405519.png)
 
-# 市场现有学习 APP 的局限
+# 现有学习 APP 用不习惯
 
 ![](https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251015215539892.png)
 
-# 我的解决方案
+# 我自己做一个吧...
 
 ![](https://tokyo-1253389072.cos.ap-tokyo.myqcloud.com/typora/20251015215555870.png)
 
