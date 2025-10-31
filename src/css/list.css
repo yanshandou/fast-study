@@ -1,0 +1,344 @@
+/* ===== CSS 变量 ===== */
+:root {
+  --font-main: en, number, qingfengnojp, MotoyaMinchoModernStd-W4;
+  --font-en: "list-en";
+  --color-primary: #8e2de2;
+  --color-white: #fff;
+  --color-text-dim: #999;
+  --color-green-bg: #c3e6cb;
+  --color-green-text: #155724;
+  --color-green-shadow: #3cba92;
+  --color-red-bg: #f8d7da;
+  --color-red-text: #721c24;
+  --color-red-shadow: #f7085a;
+  --color-purple-bg: #e6c3e6;
+  --color-purple-text: #571556;
+  --color-progress: #76b900;
+  --color-highlight: #ffd700;
+  --shadow-main: 0 3px 8px 1px rgba(0, 0, 0, 0.2);
+  --shadow-inset: inset 0 0 15px;
+  --transition-main: all 0.2s ease;
+  --transition-slow: all 0.5s;
+  --border-radius: 3px;
+  --vw-font-large: 6vw;
+  --vw-font-huge: 18vw;
+  --vw-font-normal: 5vw;
+}
+
+/* ===== 基础样式 ===== */
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+/* ===== SweetAlert 按钮样式 ===== */
+.swal-button--cancel,
+.swal-button--deny,
+.swal-button--fast {
+  background-color: var(--color-red-bg);
+  color: var(--color-red-text);
+  width: 40vw;
+  height: 15vw;
+}
+
+.swal-button--confirm,
+.swal-button--normal,
+.swal-button--look {
+  background-color: var(--color-green-bg);
+  color: var(--color-green-text);
+  width: 40vw;
+  height: 15vw;
+}
+
+.swal-button--unlimited {
+  background-color: var(--color-purple-bg);
+  color: var(--color-purple-text);
+}
+
+.swal-button--listen {
+  background-color: var(--color-red-bg);
+  color: var(--color-red-text);
+}
+/* ===== 容器样式 ===== */
+.container {
+  border: 1px solid transparent;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-content: stretch;
+  flex-wrap: wrap;
+}
+
+/* ===== 容器中的 span 元素 ===== */
+.container span {
+  color: var(--color-text-dim);
+  flex-grow: 1;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 1vw 1vw 0.5vw 1vw;
+  border-radius: var(--border-radius);
+  margin: 2px;
+  font-size: var(--vw-font-large);
+  font-family: var(--font-main);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-main);
+  line-height: 2;
+  min-height: 10vw;
+  font-style: normal;
+  transition: var(--transition-main);
+}
+
+.container span b {
+  display: contents;
+  color: var(--color-primary);
+}
+
+/* ===== span 状态样式 ===== */
+.container span.dimmed {
+  opacity: 0.1;
+  filter: blur(5px);
+}
+
+.container span.playing-item {
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4), 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 8px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container span.clicked {
+  color: var(--color-white);
+}
+
+.container span.clicked b,
+.container span.forgeted b {
+  color: var(--color-white);
+}
+
+/* ===== 按等级设置的渐变色 ===== */
+.container span.clicked.level0 {
+  background-image: linear-gradient(to bottom, #2c3e50, #bdc3c7);
+}
+
+.container span.clicked.level1 {
+  background-image: linear-gradient(to bottom, #ff0844, #ffb199);
+}
+
+.container span.clicked.level2 {
+  background-image: linear-gradient(to bottom, #f09819, #f6d365);
+}
+
+.container span.clicked.level3 {
+  background-image: linear-gradient(to bottom, #2f80ed, #56ccf2);
+}
+
+.container span.clicked.level4 {
+  background-image: linear-gradient(to bottom, #0ba360, #3cba92);
+}
+
+.container span.clicked.level5,
+.container span.clicked.level6,
+.container span.clicked.level7,
+.container span.clicked.level8,
+.container span.clicked.level9,
+.container span.clicked.level10,
+.container span.clicked.level11,
+.container span.clicked.level12 {
+  background-image: linear-gradient(to bottom, #5961f9, #ee9ae5);
+}
+
+.container span.forgeted {
+  background-image: linear-gradient(to bottom, #414339, #414339);
+  filter: blur(1px);
+  text-decoration: line-through var(--color-text-dim) 8px;
+}
+/* ===== 隐藏元素样式 ===== */
+#audioPlayer,
+.list-bgm,
+.list-start,
+.list-end {
+  display: none;
+}
+
+/* ===== 双击事件处理 ===== */
+.handle-double-click-left {
+  position: fixed;
+  width: 100vw;
+  height: 0vh;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  display: none;
+}
+
+.handle-double-click-right {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  display: none;
+}
+
+/* ===== 音频播放器覆盖层 ===== */
+.play-audio-list {
+  font-weight: normal !important;
+  width: 100vh;
+  height: 100vw;
+  position: fixed;
+  right: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.5) rotate(90deg) translateX(calc(50vh - 50vw)) translateY(calc(50vw - 50vh));
+  transform-origin: center;
+  transition: var(--transition-slow);
+  font-family: var(--font-main);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.play-audio-list.inner-shadow-green {
+  box-shadow: var(--shadow-inset) var(--color-green-shadow);
+}
+
+.play-audio-list.inner-shadow-red {
+  box-shadow: var(--shadow-inset) var(--color-red-shadow);
+}
+
+#audioTextDisplay {
+  text-align: left;
+  max-width: 90%;
+  word-break: break-all;
+  overflow-wrap: break-word;
+  color: var(--color-white);
+  font-size: var(--vw-font-large);
+}
+
+#audioTextDisplay h1 {
+  font-weight: normal !important;
+  line-height: 2 !important;
+}
+
+#audioTextDisplay h1 span.prompt {
+  font-family: var(--font-en) !important;
+  color: var(--color-white) !important;
+  font-size: var(--vw-font-huge) !important;
+  letter-spacing: 1vw !important;
+}
+
+#audioTextDisplay .morpheme rt {
+  color: var(--color-highlight);
+  transform: translate(0, -20%);
+}
+/* ===== 进度条样式 ===== */
+.progress-container {
+  width: 80%;
+  background-color: #ddd;
+  padding: 3px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+}
+
+.progress-bar {
+  height: 20px;
+  background-color: var(--color-progress);
+  width: 0%;
+  border-radius: 5px;
+  transition: width 0.4s ease-in-out;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-text {
+  color: var(--color-white);
+  font-weight: bold;
+}
+
+/* ===== 播放编号显示 ===== */
+.unlimited-play-number {
+  width: 15vw;
+  height: 10vw;
+  display: none;
+  position: fixed;
+  bottom: 0vw;
+  right: 0vw;
+  font-family: en;
+  color: var(--color-white);
+  font-size: var(--vw-font-normal);
+  z-index: 99999999;
+}
+
+.unlimited-play-number.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(90deg);
+}
+
+.normal-play-number {
+  width: 24vw;
+  height: 8vw;
+  display: none;
+  position: fixed;
+  bottom: 4vw;
+  right: 4vw;
+  font-family: en;
+  color: var(--color-white);
+  font-size: var(--vw-font-normal);
+  z-index: 99999999;
+  transform-origin: top right;
+}
+
+.normal-play-number.show {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  transform: rotate(90deg) translateX(8vw);
+}
+
+/* ===== 笔记评论显示 ===== */
+.note-comment {
+  width: 80vh;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 8vw;
+  display: none;
+  position: fixed;
+  top: 4vw;
+  right: 4vw;
+  font-family: var(--font-main);
+  color: var(--color-white);
+  font-size: var(--vw-font-normal);
+  z-index: 99999999;
+  transform-origin: top right;
+}
+
+.note-comment.show {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transform: rotate(90deg) translateX(80vh);
+}
+
+/* ===== 媒体查询（响应式样式） ===== */
+@media (min-width: 768px) {
+  .swal-custom-popup {
+    width: 85vw !important;
+  }
+}

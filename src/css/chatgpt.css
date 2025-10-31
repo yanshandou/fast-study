@@ -1,0 +1,315 @@
+/* ChatGPT聊天界面样式 */
+/* CSS变量定义 - 统一管理设计系统 */
+:root {
+  /* 颜色系统 */
+  --color-primary: #007bff;
+  --color-primary-dark: #0056b3;
+  --color-primary-darker: #003d80;
+  --color-success: #28a745;
+  --color-white: #fff;
+  --color-light-gray: #f9f9f9;
+  --color-border: #ddd;
+  --color-text-dark: #333;
+  --color-copied: #d1f1d1;
+  /* 尺寸系统 */
+  --spacing-xs: 1vw;
+  --spacing-sm: 2vw;
+  --spacing-md: 3vw;
+  --spacing-lg: 4vw;
+  --spacing-xl: 5vw;
+  /* 边框圆角 */
+  --radius-sm: 2vw;
+  --radius-md: 3vw;
+  --radius-lg: 4vw;
+  --radius-xl: 5vw;
+  --radius-circle: 50%;
+  /* 阴影效果 */
+  --shadow-light: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 1vw 2vw rgba(0, 0, 0, 0.1);
+  --shadow-heavy: 0 1vw 5vw rgba(0, 0, 0, 0.15);
+  --shadow-inset: inset 0 0.3vw 1vw rgba(0, 0, 0, 0.1);
+  --shadow-top: 0 -0.5vw 2vw rgba(0, 0, 0, 0.1);
+  /* 字体大小 */
+  --font-size-sm: 3vw;
+  --font-size-md: 4vw;
+  /* 动画时长 */
+  --transition-fast: 0.3s;
+  --transition-medium: 0.5s;
+  /* 头像尺寸 */
+  --avatar-size: 8vw;
+  /* 消息内容最大宽度 */
+  --message-max-width: 78vw;
+  --message-max-width-mobile: 100%;
+  /* 输入框高度 */
+  --input-min-height: 6vw;
+  --input-max-height: 30vw;
+  /* 边框宽度 */
+  --border-width: 0.3vw;
+}
+/* 复制状态样式 */
+.message.ai .message-content.copied,
+.message.user .message-content.copied {
+  transform: scale(1.05);
+  background-color: var(--color-copied);
+  transition: transform var(--transition-fast) ease, background var(--transition-fast) ease;
+}
+/* 列表样式优化 */
+.message-content ol,
+.message-content ul {
+  padding: var(--spacing-sm) !important;
+}
+/* 多层级列表样式 */
+.message-content ul li {
+  list-style-type: circle !important;
+}
+.message-content ul ul li {
+  list-style-type: square !important;
+}
+.message-content ul ul ul li {
+  list-style-type: decimal !important;
+}
+.message-content ol li {
+  list-style-type: circle !important;
+}
+.message-content ol ol li {
+  list-style-type: square !important;
+}
+.message-content ol ol ol li {
+  list-style-type: decimal !important;
+}
+/* 代码高亮背景透明化 */
+.hljs {
+  background-color: transparent !important;
+}
+/* 聊天容器主体 */
+.chat-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-heavy);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity var(--transition-fast) ease, transform var(--transition-fast) ease;
+  z-index: 2000;
+}
+/* 聊天容器显示状态 */
+.chat-container.show {
+  opacity: 1;
+  transform: scale(1);
+}
+/* 聊天消息区域 */
+.chat-box {
+  padding: var(--spacing-xs);
+  flex-grow: 1;
+  overflow-y: auto;
+  overflow-x: hidden; /* 防止子元素溢出引起水平滚动 */
+  border-bottom: var(--border-width) solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm); /* 调整对话间距 */
+}
+/* 消息基础样式 */
+.message {
+  display: flex;
+  align-items: flex-start;
+  animation: fadeIn var(--transition-medium) ease;
+}
+/* 用户消息样式 */
+.message.user {
+  flex-direction: row-reverse; /* 头像在右边 */
+}
+.message.user .avatar {
+  margin-left: var(--spacing-sm);
+  margin-right: 0;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  background-image: url(../image/user.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.message.user .message-content {
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  text-align: left;
+}
+/* AI消息样式 */
+.message.ai {
+  justify-content: flex-start;
+  flex-direction: row; /* 头像在左边 */
+}
+.message.ai .avatar {
+  margin-right: var(--spacing-sm);
+  margin-left: 0;
+  background-color: var(--color-success);
+  color: var(--color-white);
+  background-image: url(../image/ai.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.message.ai .message-content {
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  text-align: left;
+}
+/* 头像样式 */
+.message .avatar {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  background-color: var(--color-border);
+  border-radius: var(--radius-circle);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-light);
+}
+/* 消息内容样式 */
+.message-content {
+  font-family: en, number, kaisongnojp, MotoyaNewsMStd-W2;
+  background-color: var(--color-light-gray);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  display: inline-block;
+  word-wrap: break-word;
+  max-width: var(--message-max-width);
+  border: var(--border-width) solid var(--color-border);
+  box-shadow: var(--shadow-medium);
+  transition: background var(--transition-fast) ease, transform var(--transition-fast) ease;
+  cursor: pointer;
+  box-sizing: border-box; /* 避免padding导致总宽度超出容器 */
+  overflow-wrap: anywhere; /* 防止超长连续字符撑破布局 */
+}
+/* 消息内容中的图片 */
+.message-content img {
+  width: 100%;
+  border-radius: var(--radius-sm);
+}
+/* 代码块样式优化 */
+.message-content pre,
+.message-content code.hljs,
+.message-content pre code.hljs {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.message-content pre {
+  overflow-x: auto;
+  margin: 0; /* 避免默认margin造成视觉偏移 */
+}
+/* 输入区域样式 */
+.input-box {
+  display: flex;
+  padding: var(--spacing-md);
+  border-top: var(--border-width) solid var(--color-border);
+  background-color: var(--color-light-gray);
+  box-shadow: var(--shadow-top);
+}
+/* 输入框样式 */
+.input-box textarea {
+  flex-grow: 1;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-lg);
+  outline: none;
+  margin-right: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  box-shadow: var(--shadow-inset);
+  resize: none; /* 禁止用户手动调整大小 */
+  overflow: auto;
+  min-height: var(--input-min-height);
+  max-height: var(--input-max-height);
+}
+/* 发送按钮样式 */
+.input-box button {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: var(--color-white);
+  border: none;
+  padding: 2.5vw var(--spacing-lg);
+  border-radius: var(--radius-xl);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  transition: background var(--transition-fast) ease, transform var(--transition-fast) ease;
+}
+.input-box button:hover {
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary-darker));
+  transform: scale(1.05);
+}
+/* 动画定义 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(var(--spacing-sm));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* 移除触摸高亮效果 */
+.input-box input,
+.input-box button,
+.input-box textarea,
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-focus-ring-color: transparent;
+}
+/* 代码块背景样式 */
+.hljs {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  border-radius: var(--radius-sm);
+}
+/* 响应式设计 - 移动端优化 */
+@media (max-width: 767px) {
+  /* 隐藏头像，节省空间 */
+  .message .avatar {
+    display: none;
+  }
+  /* 移除头像边距 */
+  .message.user .message-content,
+  .message.ai .message-content {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: var(--message-max-width-mobile);
+  }
+  /* 减少移动端间距 */
+  .chat-box {
+    padding: var(--spacing-xs);
+    gap: 1.5vw;
+  }
+  /* 优化输入区域间距 */
+  .input-box {
+    padding: var(--spacing-sm);
+  }
+}
+/* 响应式设计 - 平板及桌面端 */
+@media (min-width: 768px) {
+  /* 显示头像 */
+  .message .avatar {
+    display: flex;
+  }
+  /* 恢复头像边距 */
+  .message.user .message-content {
+    margin-left: var(--spacing-sm);
+  }
+  .message.ai .message-content {
+    margin-right: var(--spacing-sm);
+  }
+  /* 保持原有最大宽度 */
+  .message-content {
+    max-width: var(--message-max-width);
+  }
+  /* 保持原有间距 */
+  .chat-box {
+    padding: var(--spacing-xs);
+    gap: var(--spacing-sm);
+  }
+  .input-box {
+    padding: var(--spacing-md);
+  }
+}

@@ -1,0 +1,231 @@
+/* ===== CSS变量定义 ===== */
+:root {
+  /* 颜色变量 */
+  --color-white: #fff;
+  --color-black: #000;
+  --color-error-bg: #f8d7da;
+  --color-error-text: #721c24;
+  --color-success-bg: #c3e6cb;
+  --color-success-text: #155724;
+  --color-highlight: rgb(251, 218, 65);
+  
+  /* 渐变背景 */
+  --gradient-main: linear-gradient(180deg, #fff5e6 0%, #f3e6cc 50%, #e0d1a6 100%);
+  --gradient-highlight: linear-gradient(
+    to right,
+    rgba(251, 218, 65, 0.1),
+    rgba(251, 218, 65, 0.9) 3%,
+    rgba(251, 218, 65, 0.9) 35%,
+    rgba(251, 218, 65, 0.9) 70%,
+    rgba(251, 218, 65, 0.8) 95%,
+    rgba(251, 218, 65, 0.3)
+  );
+  
+  /* 尺寸变量 */
+  --spacing-xs: 1vw;
+  --spacing-sm: 2.5vw;
+  --spacing-md: 5vw;
+  --font-size-sm: 4vw;
+  --font-size-lg: 6vw;
+  --button-height-sm: 15vw;
+  --button-height-lg: 20vw;
+  --button-width-half: 40vw;
+  --button-width-full: 80vw;
+  
+  /* 字体 */
+  --font-family-main: deyihei, en, number, ming;
+  --font-family-shanhai: "shanhai", sans-serif;
+}
+
+/* ===== 基础重置样式 ===== */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* ===== 字体定义 ===== */
+@font-face {
+  font-family: "shanhai";
+  src: url("./font/xujunhao/shanhai.ttf") format("truetype");
+  font-display: swap;
+}
+
+/* ===== 布局组件 ===== */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.sync-log-container {
+  flex: 1;
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-sm);
+  width: 100vw;
+  background: var(--gradient-main);
+  padding: var(--spacing-md);
+  line-height: 1.5;
+  overflow-y: auto;
+  /* 优化滚动性能 */
+  -webkit-overflow-scrolling: touch;
+}
+
+.progress-container {
+  flex: none;
+  background: var(--color-white);
+  padding: var(--spacing-md);
+}
+
+/* ===== 进度条组件 ===== */
+#syncProgressBar {
+  width: 100%;
+  height: var(--font-size-sm);
+  border-radius: calc(var(--font-size-sm) / 2);
+  overflow: hidden;
+}
+
+#syncProgressText {
+  font-size: var(--font-size-sm);
+  margin-top: var(--spacing-xs);
+  text-align: center;
+}
+
+/* ===== 按钮组件 ===== */
+.swal-button--cancel,
+.swal-button--deny {
+  background-color: var(--color-error-bg);
+  color: var(--color-error-text);
+  width: var(--button-width-half);
+  height: var(--button-height-sm);
+  border: none;
+  border-radius: 8px;
+  font-size: var(--font-size-sm);
+  transition: all 0.2s ease;
+}
+
+.swal-button--cancel:hover,
+.swal-button--deny:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.swal-button--confirm {
+  background-color: var(--color-success-bg);
+  color: var(--color-success-text);
+  width: var(--button-width-half);
+  height: var(--button-height-sm);
+  border: none;
+  border-radius: 8px;
+  font-size: var(--font-size-sm);
+  transition: all 0.2s ease;
+}
+
+.swal-button--confirm:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.swal-button--confirm-full-green {
+  font-size: var(--font-size-lg);
+  background-color: var(--color-success-bg);
+  color: var(--color-success-text);
+  width: var(--button-width-full);
+  height: var(--button-height-lg);
+  border: none;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.swal-button--confirm-full-green:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(21, 87, 36, 0.3);
+}
+
+.swal-button--confirm-full-green:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* ===== 弹窗组件 ===== */
+.swal-custom-popup b {
+  color: var(--color-black);
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+/* ===== 标签组件 ===== */
+.comment-tag {
+  padding: var(--spacing-sm);
+  padding-bottom: 0;
+  display: inline-block;
+  background: var(--gradient-highlight);
+  border-radius: 4px;
+  margin: 2px 0;
+}
+
+/* ===== 响应式设计 ===== */
+@media (min-width: 768px) {
+  :root {
+    /* 桌面端尺寸调整 */
+    --font-size-sm: 16px;
+    --font-size-lg: 20px;
+    --spacing-xs: 8px;
+    --spacing-sm: 12px;
+    --spacing-md: 20px;
+    --button-height-sm: 48px;
+    --button-height-lg: 60px;
+    --button-width-half: 160px;
+    --button-width-full: 320px;
+  }
+  
+  .swal-custom-popup {
+    width: 85vw !important;
+    max-width: 600px;
+  }
+  
+  .sync-log-container {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --spacing-md: 24px;
+  }
+  
+  .swal-custom-popup {
+    max-width: 500px;
+  }
+}
+
+/* ===== 辅助功能优化 ===== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* 高对比度模式支持 */
+@media (prefers-contrast: high) {
+  :root {
+    --color-error-bg: #d32f2f;
+    --color-error-text: #fff;
+    --color-success-bg: #2e7d32;
+    --color-success-text: #fff;
+  }
+}

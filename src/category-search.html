@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>category-search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" href="./css/toastify.min.css" />
+    <link rel="stylesheet" href="./css/api.css" />
+    <link rel="stylesheet" href="./css/xujunhao.css" />
+    <link rel="stylesheet" href="./css/category-search.css" />
+  </head>
+  <body>
+    <div class="center-box">
+      <div class="search-container">
+        <div class="search-header">
+          <input type="text" id="searchInput" placeholder="多个内容逗号分隔, and 查询" />
+          <div class="button-group">
+            <button id="cancelBtn" class="btn-cancel">取消</button>
+            <button id="searchBtn" class="btn-search">搜索分类</button>
+          </div>
+        </div>
+        <div id="historyContainer" class="history-container"></div>
+      </div>
+    </div>
+    <script src="./script/api.js"></script>
+    <script src="./script/sweetalert2.js"></script>
+    <script src="./script/toastify.js"></script>
+    <script src="./script/xujunhao/index.js"></script>
+    <script src="./script/xujunhao/mySync.js"></script>
+    <script src="./script/fontAdjuster.js"></script>
+    <script src="./script/xujunhao/syncToCloud.js"></script>
+    <script src="./script/category-search.js"></script>
+  </body>
+</html>

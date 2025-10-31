@@ -1,0 +1,120 @@
+/* ========== CSS 变量定义 ========== */
+:root {
+  /* 按钮组尺寸 */
+  --btn-group-margin-top: 2vh;
+  --btn-group-height: 16vw;
+  --btn-group-width: 94vw;
+  --btn-padding: 15px 0;
+  --btn-font-size: 18px;
+  --btn-border-radius: 12px;
+  /* 按钮背景图片尺寸 */
+  --btn-bg-size-small: 35%;
+  --btn-bg-size-medium: 40%;
+  --btn-bg-size-large: 50%;
+  /* 按钮颜色 */
+  --btn-color-delete: rgba(192, 57, 43, 0.6); /* 删除按钮红色 */
+  --btn-color-forget: rgba(156, 133, 63, 0.6); /* 忘记按钮黄色 */
+  --btn-color-remember: rgba(39, 174, 96, 0.6); /* 记住按钮绿色 */
+  --btn-color-ai: rgba(41, 128, 185, 0.6); /* AI按钮蓝色 */
+  --btn-color-edit: rgba(230, 126, 34, 0.6); /* 编辑按钮橙色 */
+  --btn-color-voice: rgba(230, 126, 34, 0.6); /* 语音按钮橙色 */
+  --btn-text-color: white;
+  /* 阴影效果 */
+  --btn-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --btn-shadow-active: 0 2px 3px rgba(0, 0, 0, 0.2);
+  /* 动画效果 */
+  --btn-transition: transform 0.2s ease, box-shadow 0.2s ease;
+  --btn-scale-active: 0.95;
+}
+/* 按钮组容器 */
+.button-group {
+  margin-top: var(--btn-group-margin-top);
+  height: var(--btn-group-height);
+  width: var(--btn-group-width);
+  display: flex;
+  gap: 0; /* 移除按钮之间的缝隙 */
+}
+/* 三个按钮等分布局 */
+.button-group.three-split .btn {
+  flex-grow: 1; /* 三等分 */
+}
+/* 五个按钮等分布局 */
+.button-group.five-split .btn {
+  flex-grow: 1; /* 五等分 */
+}
+/* ========== 基础按钮样式 ========== */
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 0;
+  color: var(--btn-text-color);
+  padding: var(--btn-padding);
+  font-size: var(--btn-font-size);
+  cursor: pointer;
+  outline: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: var(--btn-bg-size-small);
+  box-shadow: var(--btn-shadow);
+  transition: var(--btn-transition);
+  -webkit-tap-highlight-color: transparent; /* 移除移动端点击蒙层 */
+}
+/* ========== 按钮圆角设置 ========== */
+.btn:first-child {
+  border-top-left-radius: var(--btn-border-radius);
+  border-bottom-left-radius: var(--btn-border-radius);
+}
+.btn:last-child {
+  border-top-right-radius: var(--btn-border-radius);
+  border-bottom-right-radius: var(--btn-border-radius);
+}
+/* ========== 按钮背景样式 ========== */
+/* 删除按钮 */
+.delete {
+  background-color: var(--btn-color-delete);
+  background-image: url(../image/delete.png);
+}
+/* 忘记按钮 */
+.forget {
+  display: none;
+  background-color: var(--btn-color-forget);
+  background-image: url(../image/undone.png);
+  background-size: var(--btn-bg-size-large);
+}
+.forget.show {
+  display: flex;
+}
+/* 记住按钮 */
+.remember {
+  display: none;
+  background-color: var(--btn-color-remember);
+  background-image: url(../image/done2.png);
+}
+.remember.show {
+  display: flex;
+}
+/* AI 请求按钮 */
+.request-ai {
+  background-color: var(--btn-color-ai);
+  background-image: url(../image/ai.png);
+  background-size: var(--btn-bg-size-medium);
+}
+/* 编辑按钮 */
+.edit {
+  background-color: var(--btn-color-edit);
+  background-image: url(../image/edit.png);
+  background-size: var(--btn-bg-size-medium);
+}
+/* 语音按钮 */
+.voice {
+  background-color: var(--btn-color-voice);
+  background-image: url(../image/voice-comment.png);
+  background-size: var(--btn-bg-size-medium);
+}
+/* ========== 按钮交互效果 ========== */
+.btn:active {
+  transform: scale(var(--btn-scale-active));
+  box-shadow: var(--btn-shadow-active); /* 点击时减少阴影高度 */
+}

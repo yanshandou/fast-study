@@ -1,0 +1,99 @@
+/* ========== CSS 变量 ========== */
+:root {
+  --bg-color: #e0e0e0;
+  --shadow-dark: #bebebe;
+  --shadow-light: #ffffff;
+  --button-radius: 2vw;
+  --shadow-blur: 1.6vw;
+  --shadow-distance: 0.8vw;
+  --grid-gap: 2vw;
+  --container-padding: 3vw;
+}
+/* ========== 按钮容器 ========== */
+.buttons-container {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: var(--container-padding);
+  background-color: var(--bg-color);
+  /* 布局 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 初始隐藏状态 */
+  opacity: 0;
+  transform: scale(0.5);
+  z-index: -200;
+  /* 动画过渡 */
+  transition: opacity 0.5s ease, transform 0.5s ease, z-index 0s 0.5s;
+}
+/* ========== 显示状态 ========== */
+.buttons-container.show {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 200;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+/* ========== 九宫格面板 ========== */
+.buttons-panel {
+  width: 95vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--grid-gap);
+}
+/* ========== 按钮基础样式 ========== */
+.neumorphic-button {
+  /* 尺寸 */
+  width: 100%;
+  aspect-ratio: 1;
+  /* 清除默认样式 */
+  border: none;
+  outline: none;
+  cursor: pointer;
+  /* 拟态效果 */
+  border-radius: var(--button-radius);
+  background: var(--bg-color);
+  box-shadow: var(--shadow-distance) var(--shadow-distance) var(--shadow-blur) var(--shadow-dark),
+    calc(var(--shadow-distance) * -1) calc(var(--shadow-distance) * -1) var(--shadow-blur) var(--shadow-light);
+  /* 背景图设置 */
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* 过渡效果 */
+  transition: box-shadow 0.2s ease, transform 0.1s ease;
+}
+/* ========== 悬停效果 ========== */
+.neumorphic-button:hover {
+  transform: translateY(-0.2vw);
+}
+/* ========== 特定按钮样式调整 ========== */
+.neumorphic-button:nth-child(6),
+.neumorphic-button:nth-child(7) {
+  background-size: 75%;
+}
+/* ========== 点击激活效果 ========== */
+.neumorphic-button:active {
+  box-shadow: inset var(--shadow-distance) var(--shadow-distance) var(--shadow-blur) var(--shadow-dark),
+    inset calc(var(--shadow-distance) * -1) calc(var(--shadow-distance) * -1) var(--shadow-blur) var(--shadow-light);
+  transform: translateY(0);
+}
+/* ========== 响应式优化 ========== */
+@media (max-width: 768px) {
+  :root {
+    --grid-gap: 1.5vw;
+    --container-padding: 2vw;
+  }
+}
+/* ========== 无障碍优化 ========== */
+@media (prefers-reduced-motion: reduce) {
+  .buttons-container {
+    transition: opacity 0.2s ease, z-index 0s 0.2s;
+  }
+  .buttons-container.show {
+    transition: opacity 0.2s ease;
+  }
+  .neumorphic-button {
+    transition: none;
+  }
+}

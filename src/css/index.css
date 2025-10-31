@@ -1,0 +1,244 @@
+/* 全局重置样式 */
+* {
+  /* 禁用文本选择和触摸操作 */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* 统一盒模型 */
+  box-sizing: border-box;
+}
+/* 自定义字体声明 */
+@font-face {
+  font-family: "dabiao";
+  src: url("./font/xujunhao/dabiao.ttf") format("truetype");
+  font-display: swap; /* 优化字体加载性能 */
+}
+@font-face {
+  font-family: "xinquhei";
+  src: url("./font/xujunhao/xinquhei.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "number";
+  src: url("./font/xujunhao/antikor-bold.ttf") format("truetype");
+  font-display: swap;
+}
+/* CSS变量定义 - 便于主题管理 */
+:root {
+  /* 颜色变量 */
+  --color-green: #0ba360;
+  --color-orange: #e6b980;
+  --color-pink: #f78ca0;
+  --color-blue: #0054ff;
+  --color-white: #fff;
+  --color-black: #000;
+  --color-success-bg: #c3e6cb;
+  --color-success-text: #155724;
+  --color-danger-bg: #f8d7da;
+  --color-danger-text: #721c24;
+  --color-progress: #76b900;
+  /* 尺寸变量 */
+  --border-radius-small: 5px;
+  --border-radius-medium: 8px;
+  --border-radius-large: 15px;
+  --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.2);
+  --shadow-medium: 0 2px 6px rgba(0, 0, 0, 0.2);
+  --shadow-heavy: 0 3px 8px 1px rgba(0, 0, 0, 0.2);
+}
+/* SweetAlert按钮样式 */
+/* 基础按钮样式 */
+.swal-button--cancel,
+.swal-button--deny {
+  background-color: var(--color-danger-bg);
+  color: var(--color-danger-text);
+  width: 40vw;
+  height: 15vw;
+}
+.swal-button--confirm {
+  background-color: var(--color-success-bg);
+  color: var(--color-success-text);
+  width: 40vw;
+  height: 15vw;
+}
+/* 全宽按钮样式 */
+.swal-button--confirm-full-green,
+.swal-button--confirm-full-red {
+  font-size: 6vw;
+  width: 80vw;
+  height: 20vw;
+}
+.swal-button--confirm-full-green {
+  background-color: var(--color-success-bg);
+  color: var(--color-success-text);
+}
+.swal-button--confirm-full-red {
+  background-color: var(--color-danger-bg);
+  color: var(--color-danger-text);
+}
+/* 移除焦点样式 */
+.swal-button--confirm-full-green:focus,
+.swal-button--confirm-full-red:focus {
+  outline: none;
+  box-shadow: none;
+}
+/* 主容器样式 */
+.container {
+  border: 1px solid transparent;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* 容器内的span元素样式 */
+.container span {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  padding: 1.5vw 1vw;
+  border-radius: 0;
+  margin: 0;
+  font-size: 8vw;
+  line-height: 1.5;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-heavy);
+  color: var(--color-white) !important;
+  font-family: "dabiao";
+}
+/* 推荐标签样式 */
+.container span.recommend::before {
+  content: "✨推荐";
+  font-family: "xinquhei";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  font-size: 3.5vw;
+  padding: 5px 12px;
+  text-align: center;
+  line-height: 1.5;
+  border-radius: 0 0 0 var(--border-radius-large);
+  box-shadow: var(--shadow-medium);
+}
+/* 隐藏元素 */
+.study-info-mark,
+.random-music,
+.category-hold,
+.category-mark,
+.category-bgm {
+  display: none;
+}
+/* 选中状态样式 */
+.selected.small {
+  background-color: var(--color-green);
+  border: 5px solid var(--color-green);
+}
+.selected.medium {
+  background-color: var(--color-orange);
+  border: 5px solid var(--color-orange);
+}
+.selected.large {
+  background-color: var(--color-pink);
+  border: 5px solid var(--color-pink);
+}
+/* 未选中状态样式 */
+.no-selected.small,
+.no-selected.medium,
+.no-selected.large {
+  color: var(--color-black) !important;
+  background-image: none;
+}
+.no-selected.small {
+  border: 5px dashed var(--color-green);
+}
+.no-selected.medium {
+  border: 5px dashed var(--color-orange);
+}
+.no-selected.large {
+  border: 5px dashed var(--color-pink);
+}
+/* 音频播放器弹窗 */
+.play-audio-list {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.5s ease;
+  font-family: "number";
+  padding: 20px;
+  box-sizing: border-box;
+}
+/* 音频文本显示区域 */
+#audioTextDisplay {
+  transform: translateY(-10vw);
+  text-align: left;
+  max-width: 80%;
+  word-wrap: break-word;
+  color: var(--color-white);
+  font-size: 6vw;
+}
+#audioTextDisplay h1 {
+  font-weight: normal !important;
+  line-height: 1.5;
+}
+/* 进度条容器 */
+.progress-container {
+  width: 80%;
+  background-color: #ddd;
+  padding: 3px;
+  border-radius: var(--border-radius-medium);
+  box-shadow: var(--shadow-light);
+  position: fixed;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+}
+/* 进度条 */
+.progress-bar {
+  height: 20px;
+  background-color: var(--color-progress);
+  width: 0%;
+  border-radius: var(--border-radius-small);
+  transition: width 0.4s ease-in-out;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* 进度条文字 */
+.progress-text {
+  color: var(--color-white);
+  font-weight: bold;
+}
+/* 响应式设计 - 平板和桌面端适配 */
+@media (min-width: 768px) {
+  .swal-custom-popup {
+    width: 85vw !important;
+  }
+  /* 优化大屏幕下的字体大小 */
+  .container span {
+    font-size: 4vw;
+  }
+  #audioTextDisplay {
+    font-size: 3vw;
+  }
+  .container span.recommend::before {
+    font-size: 2vw;
+  }
+}

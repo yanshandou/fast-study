@@ -1,0 +1,37 @@
+@font-face {
+  font-family: "iconfont";
+  src: url('../font/iconfont.woff2?t=1674211306571') format('woff2'),
+       url('../font/iconfont.woff?t=1674211306571') format('woff'),
+       url('../font/iconfont.ttf?t=1674211306571') format('truetype');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-shanchu:before {
+  content: "\e629";
+}
+.icon-tubiao103:before {
+  content: "\e62a";
+}
+.icon-tubiao104:before {
+  content: "\e62b";
+}
+.icon-fanhui:before {
+  content: "\e6e9";
+}
+.icon-bianji:before {
+  content: "\e600";
+}
+.icon-quxiao:before {
+  content: "\e68d";
+}
+.icon-tijiaochenggong:before {
+  content: "\e679";
+}
+.icon-tijiaoshibai:before {
+  content: "\e67a";
+}

@@ -1,0 +1,240 @@
+/* ===== CSS变量定义 ===== */
+:root {
+  /* 颜色变量 */
+  --color-white: #fff;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-shadow-active: rgba(0, 0, 0, 0.2);
+  --color-transparent: transparent;
+  /* 按钮颜色 */
+  --color-record-bg: rgba(63, 236, 172, 0.1);
+  --color-audio-play: #09ae2e;
+  --color-cancel-bg: rgba(52, 152, 219, 0.8);
+  --color-save-bg: rgba(52, 152, 219, 0.8);
+  --color-reset-bg: rgba(46, 204, 113, 0.8);
+  --color-confirm-bg: rgba(247, 61, 135, 0.8);
+  /* 尺寸变量 */
+  --button-group-height: 16vw;
+  --button-group-width: 94vw;
+  --border-radius-full: 8vw;
+  --spacing-xs: 1vw;
+  --font-size-base: 18px;
+  --padding-base: 15px;
+  --z-index-overlay: 1000;
+  /* 图标尺寸 */
+  --icon-size-sm: 10vw;
+  --icon-size-md: 12%;
+  --icon-size-lg: 35%;
+  /* 动画变量 */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  --scale-active: 0.95;
+  --scale-hidden: 0.5;
+  --scale-normal: 1;
+}
+/* ===== 按钮组容器样式 ===== */
+.button-group-new {
+  height: var(--button-group-height);
+  gap: 0;
+  width: var(--button-group-width);
+  position: fixed;
+  bottom: var(--spacing-xs);
+  left: 50%;
+  transform: translateX(-50%) scale(var(--scale-hidden));
+  z-index: var(--z-index-overlay);
+  opacity: 0;
+  transition: all var(--transition-slow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-group-new.show {
+  opacity: 1;
+  transform: translateX(-50%) scale(var(--scale-normal));
+}
+/* ===== 录音按钮样式 ===== */
+.record {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  color: var(--color-white);
+  padding: var(--padding-base) 0;
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  outline: none;
+  -webkit-tap-highlight-color: var(--color-transparent);
+  box-shadow: 0 4px 6px var(--color-shadow);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  background-size: var(--icon-size-md);
+  background-color: var(--color-record-bg);
+  border-radius: var(--border-radius-full);
+  background-image: url(../image/record.png);
+}
+.record.show {
+  display: flex;
+}
+.record:active {
+  transform: scale(var(--scale-active));
+  box-shadow: 0 2px 3px var(--color-shadow-active);
+}
+/* ===== 音频播放按钮样式 ===== */
+.my-audio {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  color: var(--color-white);
+  padding: var(--padding-base) 0;
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  outline: none;
+  -webkit-tap-highlight-color: var(--color-transparent);
+  box-shadow: 0 4px 6px var(--color-shadow);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius-full);
+  background-size: var(--icon-size-sm);
+  transition: background-color var(--transition-medium), 
+              transform var(--transition-fast), 
+              box-shadow var(--transition-fast);
+  background-color: var(--color-audio-play);
+  background-image: url("../image/audio-pause.png");
+}
+.my-audio.show {
+  display: flex;
+}
+.my-audio:active {
+  transform: scale(var(--scale-active));
+  box-shadow: 0 2px 3px var(--color-shadow-active);
+}
+/* ===== 功能按钮样式 ===== */
+.btn-new {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  color: var(--color-white);
+  padding: var(--padding-base) 0;
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  outline: none;
+  -webkit-tap-highlight-color: var(--color-transparent);
+  box-shadow: 0 4px 6px var(--color-shadow);
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 0;
+  flex-grow: 1;
+  background-size: var(--icon-size-lg);
+}
+.btn-new.show {
+  display: flex;
+}
+.btn-new:active {
+  transform: scale(var(--scale-active));
+  box-shadow: 0 2px 3px var(--color-shadow-active);
+}
+/* 取消按钮 */
+.btn-new.cancel {
+  border-top-left-radius: var(--border-radius-full);
+  border-bottom-left-radius: var(--border-radius-full);
+  background-color: var(--color-cancel-bg);
+  background-image: url(../image/no-delete.png);
+}
+/* 保存按钮 */
+.btn-new.save {
+  border-top-left-radius: var(--border-radius-full);
+  border-bottom-left-radius: var(--border-radius-full);
+  background-color: var(--color-save-bg);
+  background-image: url(../image/save4.png);
+}
+/* 重置按钮 */
+.btn-new.reset {
+  border-top-right-radius: var(--border-radius-full);
+  border-bottom-right-radius: var(--border-radius-full);
+  background-color: var(--color-reset-bg);
+  background-image: url(../image/loading.png);
+}
+/* 确认按钮 */
+.btn-new.confirm {
+  background-color: var(--color-confirm-bg);
+  background-image: url("../image/audio-play.png");
+}
+/* ===== 响应式设计 ===== */
+@media (min-width: 768px) {
+  :root {
+    /* 桌面端尺寸调整 */
+    --button-group-height: 60px;
+    --button-group-width: 400px;
+    --border-radius-full: 30px;
+    --spacing-xs: 10px;
+    --icon-size-sm: 24px;
+    --icon-size-md: 28px;
+    --icon-size-lg: 32px;
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --button-group-width: 480px;
+    --font-size-base: 16px;
+  }
+}
+/* ===== 性能优化 ===== */
+@media (prefers-reduced-motion: reduce) {
+  .button-group-new,
+  .record,
+  .my-audio,
+  .btn-new {
+    transition: none !important;
+  }
+}
+/* GPU硬件加速 */
+.button-group-new,
+.record,
+.my-audio,
+.btn-new {
+  will-change: transform;
+  transform: translateZ(0);
+}
+/* ===== 辅助功能优化 ===== */
+@media (prefers-contrast: high) {
+  :root {
+    --color-shadow: rgba(0, 0, 0, 0.3);
+    --color-shadow-active: rgba(0, 0, 0, 0.5);
+  }
+}
+/* 深色模式支持 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-record-bg: rgba(63, 236, 172, 0.2);
+    --color-cancel-bg: rgba(52, 152, 219, 0.9);
+    --color-save-bg: rgba(52, 152, 219, 0.9);
+    --color-reset-bg: rgba(46, 204, 113, 0.9);
+    --color-confirm-bg: rgba(247, 61, 135, 0.9);
+  }
+}
+/* ===== 动画增强 ===== */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+.record.recording {
+  animation: pulse 1s infinite;
+}
+.my-audio.loading {
+  background-image: url("../image/loading.png");
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

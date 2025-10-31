@@ -1,0 +1,612 @@
+/* ========== CSS 变量 ========== */
+:root {
+  --font-jp: en, number, qingfengnojp, MotoyaMinchoModernStd-W4;
+  --font-jp-table: jp-table, zhuzi-hei-jp, zhuzi-hei-zh;
+  --color-text-primary: rgba(0, 0, 0, 0.6);
+  --color-border: #ddd;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-shadow-deep: rgba(0, 0, 0, 0.2);
+  --color-bg-white: #fff;
+  --color-bg-light: #f9f9f9;
+  --color-bg-editor: #f8f8f8;
+  --color-hover: #e0f7fa;
+  --level0-color: rgba(44, 62, 80, 0.5);
+  --level1-color: rgba(255, 8, 68, 0.5);
+  --level2-color: rgba(240, 152, 25, 0.5);
+  --level3-color: rgba(47, 128, 237, 0.5);
+  --level4-color: rgba(11, 163, 96, 0.5);
+  --level5-plus-color: rgba(89, 97, 249, 0.5);
+  --border-radius-sm: 8px;
+  --border-radius-md: 10px;
+  --border-radius-lg: 15px;
+  --transition-fast: 0.1s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+/* ========== 动画效果 ========== */
+@keyframes scaleAndBack {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+}
+.scale-animation {
+  animation: scaleAndBack var(--transition-normal);
+}
+/* ========== 表格样式 ========== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-bg-white);
+  box-shadow: 0 2px 8px var(--color-shadow);
+  border-radius: var(--border-radius-sm);
+  margin-bottom: 2vw;
+}
+th,
+td {
+  border: 1px solid var(--color-border);
+  padding: 16px;
+  text-align: center;
+  font-size: 5vw;
+  transition: background-color var(--transition-normal);
+  font-family: var(--font-jp-table);
+}
+th {
+  background-color: #4caf50;
+  color: var(--color-bg-white);
+}
+tr:nth-child(even) td {
+  background-color: var(--color-bg-light);
+}
+tr:hover td {
+  background-color: var(--color-hover);
+}
+.message-content table {
+  width: 99%;
+}
+.message-content th,
+.message-content td {
+  font-size: 2vw;
+}
+/* ========== 标题样式 ========== */
+.side2 h1,
+.side2 h2,
+.side2 h3,
+.side2 h4,
+.side2 h5,
+.side2 h6 {
+  padding-top: 2vw;
+  border-top: 1vw double #666666;
+  border-bottom: 1vw double #666666;
+  margin: 3vw 0;
+  font-weight: normal !important;
+  text-align: center;
+  font-family: var(--font-jp);
+}
+blockquote h1 {
+  border: none !important;
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  font-weight: normal !important;
+}
+/* ========== 日语示例元素样式 ========== */
+jp-example,
+.jp_example {
+  font-family: var(--font-jp);
+  user-select: none;
+  transition: filter var(--transition-fast);
+  cursor: pointer;
+  filter: blur(2vw);
+}
+jp-example {
+  display: inline !important;
+}
+jp-example rt {
+  filter: blur(2vw);
+}
+jp-example.clear,
+.jp_example.clear {
+  filter: blur(0);
+}
+jp-example.clear rt {
+  filter: blur(0);
+}
+hr {
+  color: var(--color-border);
+  border: double;
+  border-width: 3px 5px;
+  border-color: var(--color-border) transparent;
+  height: 1px;
+  overflow: visible;
+  margin: 20px;
+  position: relative;
+}
+hr:before,
+hr:after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-width: 0 3px 3px 0;
+  border-style: double;
+  top: -3px;
+  background: radial-gradient(2px at 1px 1px, currentColor 2px, transparent 0) no-repeat;
+}
+hr:before {
+  transform: rotate(-45deg);
+  left: -20px;
+}
+hr:after {
+  transform: rotate(135deg);
+  right: -20px;
+}
+/* ========== SweetAlert 按钮样式 ========== */
+.swal-button--cancel,
+.swal-button--look {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+.swal-button--confirm,
+.swal-button--autoplay {
+  background-color: #c3e6cb;
+  color: #155724;
+}
+.swal-button--study {
+  background-color: #d1ecf1;
+  color: #0c5460;
+}
+.swal-button--cancel,
+.swal-button--confirm {
+  width: 40vw;
+  height: 15vw;
+}
+.swal-button--look,
+.swal-button--autoplay,
+.swal-button--study {
+  width: 28vw;
+  height: 14vw;
+}
+/* ========== 音频与媒体元素样式 ========== */
+.my-audio-player,
+.audioPlayer,
+audio {
+  display: none;
+}
+rt {
+  color: #e5199a !important;
+}
+.audio-container {
+  display: block;
+  width: 94vw;
+  height: 15vw;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  margin: 1vw auto;
+  background: #f73d87 url("image/audio-play.png") center/10vw no-repeat;
+  transition: background-color var(--transition-normal);
+}
+.audio-container.playing {
+  background-color: #09ae2e;
+  background-image: url("image/audio-pause.png");
+}
+.audio-container.locking {
+  background-color: #888;
+  background-image: url("image/lock.png");
+}
+.audio-container.hide {
+  display: none;
+}
+/* ========== 全屏图片样式 ========== */
+.full-img {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9) center/contain no-repeat;
+  z-index: 100;
+  display: none;
+}
+.full-img.rotate {
+  transform: rotate(90deg) scale(1);
+}
+/* ========== 编辑容器样式 ========== */
+.edit-container {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 3vw;
+  background-color: var(--color-bg-white);
+  transform: scale(0.5);
+  opacity: 0;
+  transition: all var(--transition-slow);
+}
+.edit-container.show {
+  opacity: 1;
+  transform: scale(1);
+}
+.note-editor {
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  resize: none;
+  box-sizing: border-box;
+  border-radius: var(--border-radius-md);
+  background-color: var(--color-bg-editor);
+  color: #333;
+  box-shadow: inset 0 1px 3px var(--color-shadow);
+}
+/* ========== 侧边容器样式 ========== */
+.side1,
+.side2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  flex-direction: column;
+}
+.side1 {
+  font-size: 16vw;
+  font-family: var(--font-jp);
+  color: var(--color-text-primary);
+  transform: rotateY(0deg);
+}
+.side1 h1 {
+  line-height: 1.5;
+  font-size: 16vw !important; /*💯phone 12vw, pad 9vw*/
+  font-weight: normal !important;
+  text-align: center;
+  font-family: var(--font-jp);
+}
+.side2 {
+  font-size: 6vw; /*💯phone 6vw, pad 5vw*/
+  background-color: var(--color-bg-white);
+  transform: rotateX(180deg) rotateY(180deg);
+  background-image: linear-gradient(
+      0deg,
+      transparent 24%,
+      rgba(201, 195, 195, 0.329) 25%,
+      hsla(0, 8%, 80.4%, 0.05) 26%,
+      transparent 27%,
+      transparent 74%,
+      hsla(0, 5.2%, 81%, 0.185) 75%,
+      rgba(180, 176, 176, 0.05) 76%,
+      transparent 77%,
+      transparent
+    ),
+    linear-gradient(
+      90deg,
+      transparent 24%,
+      rgba(204, 196, 196, 0.226) 25%,
+      hsla(0, 4%, 66.1%, 0.05) 26%,
+      transparent 27%,
+      transparent 74%,
+      hsla(0, 5.2%, 81%, 0.185) 75%,
+      rgba(180, 176, 176, 0.05) 76%,
+      transparent 77%,
+      transparent
+    );
+  background-size: 50px 50px;
+}
+.side1 .side1-container,
+.side2 .side2-container {
+  overflow: hidden;
+  padding: 2vw;
+  display: inline-block;
+  color: var(--color-text-primary);
+  font-size: 8vw; /*💯phone 8vw, pad 5vw*/
+  line-height: 1.5;
+  word-break: break-all;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+/* ========== 等级高亮系统 ========== */
+.side1 .side1-container ins,
+.side2 .side2-container ins,
+.side1 .side1-container u,
+.side2 .side2-container u {
+  padding: 0 1vw;
+  margin: 0 1vw;
+  text-decoration: none;
+}
+/* 等级 0–4 的专属背景样式 */
+.side1 .side1-container.level0 ins,
+.side2 .side2-container.level0 ins,
+.side1 .side1-container.level0 u,
+.side2 .side2-container.level0 u {
+  background: linear-gradient(to bottom, transparent 60%, var(--level0-color) 60%);
+}
+.side1 .side1-container.level1 ins,
+.side2 .side2-container.level1 ins,
+.side1 .side1-container.level1 u,
+.side2 .side2-container.level1 u {
+  background: linear-gradient(to bottom, transparent 60%, var(--level1-color) 60%);
+}
+.side1 .side1-container.level2 ins,
+.side2 .side2-container.level2 ins,
+.side1 .side1-container.level2 u,
+.side2 .side2-container.level2 u {
+  background: linear-gradient(to bottom, transparent 60%, var(--level2-color) 60%);
+}
+.side1 .side1-container.level3 ins,
+.side2 .side2-container.level3 ins,
+.side1 .side1-container.level3 u,
+.side2 .side2-container.level3 u {
+  background: linear-gradient(to bottom, transparent 60%, var(--level3-color) 60%);
+}
+.side1 .side1-container.level4 ins,
+.side2 .side2-container.level4 ins,
+.side1 .side1-container.level4 u,
+.side2 .side2-container.level4 u {
+  background: linear-gradient(to bottom, transparent 60%, var(--level4-color) 60%);
+}
+/* 等级 5 及以上共用相同背景样式 */
+.side1 .side1-container.level5 ins,
+.side2 .side2-container.level5 ins,
+.side1 .side1-container.level5 u,
+.side2 .side2-container.level5 u,
+.side1 .side1-container.level6 ins,
+.side2 .side2-container.level6 ins,
+.side1 .side1-container.level6 u,
+.side2 .side2-container.level6 u,
+.side1 .side1-container.level7 ins,
+.side2 .side2-container.level7 ins,
+.side1 .side1-container.level7 u,
+.side2 .side2-container.level7 u,
+.side1 .side1-container.level8 ins,
+.side2 .side2-container.level8 ins,
+.side1 .side1-container.level8 u,
+.side2 .side2-container.level8 u,
+.side1 .side1-container.level9 ins,
+.side2 .side2-container.level9 ins,
+.side1 .side1-container.level9 u,
+.side2 .side2-container.level9 u,
+.side1 .side1-container.level10 ins,
+.side2 .side2-container.level10 ins,
+.side1 .side1-container.level10 u,
+.side2 .side2-container.level10 u,
+.side1 .side1-container.level11 ins,
+.side2 .side2-container.level11 ins,
+.side1 .side1-container.level11 u,
+.side2 .side2-container.level11 u,
+.side1 .side1-container.level12 ins,
+.side2 .side2-container.level12 ins,
+.side1 .side1-container.level12 u,
+.side2 .side2-container.level12 u {
+  background: linear-gradient(to bottom, transparent 60%, var(--level5-plus-color) 60%);
+}
+/* ========== 日语录音组件样式 ========== */
+.jp-recorder {
+  padding: 2vw 0.5vw 2vw 1vw;
+  border: 0.5vw solid;
+  border-radius: var(--border-radius-md);
+  width: fit-content;
+  transform: translateX(-1.5vw);
+}
+.jp-recorder.has-ruby {
+  padding-top: 4vw;
+}
+/* 各等级录音器的边框颜色 */
+.side2 .side2-container.level0 .jp-recorder {
+  border-color: var(--level0-color);
+}
+.side2 .side2-container.level1 .jp-recorder {
+  border-color: var(--level1-color);
+}
+.side2 .side2-container.level2 .jp-recorder {
+  border-color: var(--level2-color);
+}
+.side2 .side2-container.level3 .jp-recorder {
+  border-color: var(--level3-color);
+}
+.side2 .side2-container.level4 .jp-recorder {
+  border-color: var(--level4-color);
+}
+.side2 .side2-container.level12 .jp-recorder {
+  border-color: var(--level5-plus-color);
+}
+/* ========== 容器内容样式 ========== */
+.side1 .side1-container img,
+.side2 .side2-container img {
+  display: block;
+  margin: 0 auto;
+}
+.side1 .side1-container li,
+.side1 .side1-container p,
+.side2 .side2-container li,
+.side2 .side2-container p {
+  margin-bottom: 1.5vw;
+  font-family: var(--font-jp);
+}
+.side1 img,
+.side2 img {
+  width: 100%;
+  border-radius: var(--border-radius-lg);
+  margin-bottom: 2vw;
+  border: 0.3vw solid var(--color-shadow-deep);
+  box-shadow: 0 0 10px var(--color-shadow-deep);
+}
+.side1 img.zooming,
+.side2 img.zooming {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  transform: scale(2);
+}
+/* ========== Swiper 轮播样式 ========== */
+.swiper-container-3d .swiper-slide-shadow-left,
+.swiper-container-3d .swiper-slide-shadow-right {
+  background-image: none;
+}
+.swiper-wrapper code {
+  font-family: var(--font-jp);
+  user-select: none;
+  transition: filter var(--transition-fast);
+  cursor: pointer;
+  filter: blur(2vw);
+}
+.swiper-wrapper code.clear {
+  filter: blur(0);
+}
+/* ========== 列表样式 ========== */
+.side1 .side1-container ul,
+.side1 .side1-container ol,
+.side2 .side2-container ul,
+.side2 .side2-container ol {
+  list-style-type: "◎";
+  list-style-position: outside;
+  padding: 0 !important;
+  margin-left: 1em;
+}
+.side1 .side1-container ul span,
+.side1 .side1-container ol span,
+.side2 .side2-container ul span,
+.side2 .side2-container ol span,
+.side1 .side1-container ul li p,
+.side1 .side1-container ol li p,
+.side2 .side2-container ul li p,
+.side2 .side2-container ol li p {
+  display: inline;
+}
+/* side2 的嵌套列表样式 */
+.side2 .side2-container ul li,
+.side2 .side2-container ol li {
+  list-style-type: "◎" !important;
+  list-style-position: outside;
+}
+.side2 .side2-container ul ul li,
+.side2 .side2-container ol ol li {
+  list-style-type: "✦" !important;
+  list-style-position: outside;
+}
+.side2 .side2-container ul ul ul li,
+.side2 .side2-container ol ol ol li {
+  list-style-type: "✩" !important;
+  list-style-position: outside;
+}
+/* ========== 分隔线（HR）装饰样式 ========== */
+hr {
+  color: var(--color-border);
+  border: double;
+  border-width: 3px 5px;
+  border-color: var(--color-border) transparent;
+  height: 1px;
+  overflow: visible;
+  margin: 20px;
+  position: relative;
+}
+hr:before,
+hr:after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-width: 0 3px 3px 0;
+  border-style: double;
+  top: -3px;
+  background: radial-gradient(2px at 1px 1px, currentColor 2px, transparent 0) no-repeat;
+}
+hr:before {
+  transform: rotate(-45deg);
+  left: -20px;
+}
+hr:after {
+  transform: rotate(135deg);
+  right: -20px;
+}
+hr.voice-comment-separator.hide {
+  display: none;
+}
+/* ========== 笔记盒子 3D 卡片样式 ========== */
+.note-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: #999;
+  transition: transform var(--transition-slow);
+  transform-style: preserve-3d;
+  box-shadow: 0 15px 50px var(--color-shadow-deep);
+}
+.note-box.is-flipped {
+  transform: rotateY(180deg);
+}
+.note-content {
+  position: absolute;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: var(--color-bg-white);
+  border-radius: var(--border-radius-md);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-shadow: 0 3px 18px 3px var(--color-shadow-deep);
+}
+/* ========== 评论标签样式 ========== */
+p#comment-tag {
+  padding-top: 5px;
+  display: inline-block;
+  background: linear-gradient(
+    to right,
+    rgba(251, 218, 65, 0.1),
+    rgba(251, 218, 65, 0.9) 3%,
+    rgba(251, 218, 65, 0.9) 35%,
+    rgba(251, 218, 65, 0.9) 70%,
+    rgba(251, 218, 65, 0.8) 95%,
+    rgba(251, 218, 65, 0.3)
+  );
+}
+p#comment-tag.hide {
+  display: none;
+}
+/* ========== 操作按钮样式 ========== */
+.voice-comment-btn {
+  background-image: url("./image/voice-comment.png");
+}
+.ai-btn {
+  background-image: url("./image/ai.png");
+}
+.text-comment-btn {
+  background-image: url("./image/text-comment.png");
+}
+.done-btn {
+  background-image: url("./image/undone.png");
+}
+.no-shake-btn {
+  background-image: url("./image/noshake.png");
+}
+.done2-btn {
+  background-image: url("./image/done2.png");
+}
+.delete-btn {
+  background-image: url("./image/delete.png");
+}
+.record-btn {
+  background-image: url("./image/recorder.png");
+}
+.edit-btn {
+  background-image: url("./image/edit.png");
+}
+/* ========== 响应式设计（自适应布局） ========== */
+@media (min-width: 768px) {
+  .swal-custom-popup {
+    width: 85vw !important;
+  }
+  .swal-button--look,
+  .swal-button--autoplay,
+  .swal-button--study {
+    width: 24vw;
+    height: 12vw;
+  }
+  .swiper-wrapper code,
+  .jp_example,
+  jp-example {
+    filter: blur(1.5vw);
+  }
+  jp-example rt {
+    filter: blur(1.5vw);
+  }
+}

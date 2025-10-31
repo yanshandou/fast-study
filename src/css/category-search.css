@@ -1,0 +1,287 @@
+/* ===== CSS自定义属性 ===== */
+:root {
+  /* 颜色系统 */
+  --primary-bg: linear-gradient(0deg, #fdfbfb 0%, #ebedee 100%);
+  --white: #fff;
+  --light-gray: #f9f9f9;
+  --border-gray: #e0e0e0;
+  --shadow-color: rgba(0, 0, 0, 0.06);
+  /* 按钮颜色 */
+  --btn-cancel-bg: #fae0e0;
+  --btn-cancel-color: #a71d2a;
+  --btn-search-bg: #d6f5e6;
+  --btn-search-color: #276b39;
+  /* SweetAlert按钮颜色 */
+  --swal-cancel-bg: #f8d7da;
+  --swal-cancel-color: #721c24;
+  --swal-confirm-bg: #c3e6cb;
+  --swal-confirm-color: #155724;
+  --swal-info-bg: #d1ecf1;
+  --swal-info-color: #0c5460;
+  --swal-primary-bg: #42a5f5;
+  --swal-primary-color: #fff;
+  /* 尺寸系统 */
+  --border-radius: 2vw;
+  --border-radius-lg: 3vw;
+  --spacing-xs: 2vw;
+  --spacing-sm: 3vw;
+  --spacing-md: 4vw;
+  --spacing-lg: 5vw;
+  /* 字体系统 */
+  --font-family: en, number, qingfengnojp, MotoyaMinchoModernStd-W4;
+  --font-size-base: 3.8vw;
+  --font-size-lg: 4vw;
+  --font-size-sm: 3.7vw;
+  --font-size-xl: 6vw;
+}
+/* ===== 基础重置和布局 ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background-image: var(--primary-bg);
+}
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-family);
+}
+/* ===== 字体定义 ===== */
+@font-face {
+  font-family: "iconfont111";
+  src: url("./css/iconfont111.ttf?t=1748056403200") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* 优化字体加载性能 */
+}
+.iconfont111 {
+  font-family: "iconfont111" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* ===== 主容器布局 ===== */
+.center-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  max-width: 100vw;
+}
+.search-container {
+  width: 92vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* ===== 搜索头部区域 ===== */
+.search-header {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 1vw 2vw var(--shadow-color);
+  padding: var(--spacing-md) var(--spacing-sm) var(--spacing-lg) var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#searchInput {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-xs);
+  font-size: var(--font-size-lg);
+  border: 1px solid var(--border-gray);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-sm);
+  outline: none;
+  background: var(--light-gray);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+#searchInput:focus {
+  border-color: var(--btn-search-color);
+  box-shadow: 0 0 0 2px rgba(39, 107, 57, 0.1);
+}
+/* ===== 按钮组 ===== */
+.button-group {
+  display: flex;
+  gap: var(--spacing-xs);
+  justify-content: space-between;
+  width: 100%;
+}
+.btn-cancel,
+.btn-search {
+  flex: 1;
+  padding: var(--spacing-sm) 0;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+.btn-cancel {
+  background: var(--btn-cancel-bg);
+  color: var(--btn-cancel-color);
+}
+.btn-cancel:hover {
+  background: #f5c6c6;
+  transform: translateY(-1px);
+}
+.btn-search {
+  background: var(--btn-search-bg);
+  color: var(--btn-search-color);
+}
+.btn-search:hover {
+  background: #c2f0d4;
+  transform: translateY(-1px);
+}
+/* ===== 历史记录容器 ===== */
+.history-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-xs);
+  justify-content: center;
+  align-content: flex-start;
+  width: 100%;
+  min-height: 0.1vw;
+}
+.history-container::-webkit-scrollbar {
+  width: 0.8vw;
+  background: transparent;
+}
+.history-container::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 1vw;
+}
+.history-item {
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius);
+  padding: 0 var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  min-width: 16vw;
+  max-width: 90vw;
+  min-height: 8vw;
+  margin-bottom: var(--spacing-xs);
+  cursor: pointer;
+  transition: all 0.4s ease;
+  user-select: none;
+  gap: var(--spacing-sm);
+  word-break: break-all;
+  white-space: normal;
+  background: #eee;
+}
+.history-item:hover {
+  background: #ddd;
+  transform: scale(1.02);
+}
+.history-item span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  flex: 0 0 auto;
+  max-width: 90vw;
+  display: inline-block;
+  transform: translateY(2px);
+}
+#historyContainer {
+  display: none;
+}
+/* ===== SweetAlert 按钮样式 ===== */
+/* 三按钮布局 */
+.swal-button--cancel2 {
+  background-color: var(--swal-cancel-bg);
+  color: var(--swal-cancel-color);
+  width: 28vw;
+  height: 14vw;
+}
+.swal-button--deny2 {
+  background-color: var(--swal-primary-bg);
+  color: var(--swal-primary-color);
+  width: 28vw;
+  height: 14vw;
+}
+.swal-button--confirm2 {
+  background-color: var(--swal-info-bg);
+  color: var(--swal-info-color);
+  width: 28vw;
+  height: 14vw;
+}
+/* 双按钮布局 */
+.swal-button--cancel,
+.swal-button--deny {
+  background-color: var(--swal-cancel-bg);
+  color: var(--swal-cancel-color);
+  width: 40vw;
+  height: 15vw;
+}
+.swal-button--confirm {
+  background-color: var(--swal-confirm-bg);
+  color: var(--swal-confirm-color);
+  width: 40vw;
+  height: 15vw;
+}
+/* 全宽按钮 */
+.swal-button--confirm-full-green {
+  font-size: var(--font-size-xl);
+  background-color: var(--swal-confirm-bg);
+  color: var(--swal-confirm-color);
+  width: 80vw;
+  height: 20vw;
+}
+.swal-button--confirm-full-green:focus {
+  outline: none;
+  box-shadow: none;
+}
+.swal-button--confirm-full-red {
+  font-size: var(--font-size-xl);
+  background-color: var(--swal-cancel-bg);
+  color: var(--swal-cancel-color);
+  width: 80vw;
+  height: 20vw;
+}
+.swal-button--confirm-full-red:focus {
+  outline: none;
+  box-shadow: none;
+}
+/* ===== 响应式设计 ===== */
+@media (min-width: 768px) {
+  .swal-custom-popup {
+    width: 85vw !important;
+  }
+  /* 桌面端优化 */
+  :root {
+    --border-radius: 8px;
+    --border-radius-lg: 12px;
+    --spacing-xs: 8px;
+    --spacing-sm: 12px;
+    --spacing-md: 16px;
+    --spacing-lg: 20px;
+    --font-size-base: 14px;
+    --font-size-lg: 16px;
+    --font-size-sm: 13px;
+    --font-size-xl: 18px;
+  }
+  .search-container {
+    width: 80vw;
+    max-width: 600px;
+  }
+  .history-item {
+    min-width: 80px;
+    min-height: 32px;
+  }
+}
