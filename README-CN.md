@@ -1,3 +1,5 @@
+[日本语](./README.md) | 简体中文
+
 # 先看视频
 
 [![Demo Video](./assets/20251015215209457.png)](https://www.youtube.com/watch?v=OeQb6fTCafo)
